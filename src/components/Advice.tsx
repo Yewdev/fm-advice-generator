@@ -18,9 +18,9 @@ export default function Advice() {
   return (
     <>
       <motion.div
-        animate={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: -20 }}
-        transition={{ delay: 0.8, duration: 1.5 }}
+        animate={{ y: 0 }}
+        initial={{ y: 20 }}
+        transition={{ duration: 0.3 }}
         className="group relative mb-10 flex max-w-[26rem] flex-col items-center gap-8 rounded-2xl bg-[#313a49] px-6 py-8 shadow-[0_0_30px_-15px_#50ffa8] duration-1000 selection:bg-[#50ffa8] selection:text-[#313a49] hover:bg-[#2a323f] hover:shadow-[#50ffa881] md:max-w-[34rem] md:px-10 md:py-14 lg:shadow-[0_0_50px_-15px_#50ffa8]"
       >
         <span className="select-none text-xs font-semibold tracking-[0.2em] text-[#50ffa8] md:tracking-[0.4em]">
