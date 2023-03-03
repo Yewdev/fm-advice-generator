@@ -18,7 +18,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main
-        className={`${manrope.className} flex min-h-screen flex-col items-center justify-center bg-[#202631]`}
+        className={`${manrope.className} flex h-[100svh] flex-col items-center justify-center bg-[#202631]`}
       >
         <div className="container flex flex-col items-center justify-center px-4 ">
           <Advice />

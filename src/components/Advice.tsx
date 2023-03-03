@@ -21,7 +21,7 @@ export default function Advice() {
         animate={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -20 }}
         transition={{ delay: 0.8, duration: 1.5 }}
-        className="group relative mb-10 flex max-w-[26rem] flex-col items-center gap-8 rounded-2xl bg-[#313a49] px-6 py-8 duration-1000 selection:bg-[#50ffa8] selection:text-[#313a49] hover:shadow-[0_0_30px_-15px_#50ffa8] md:max-w-[34rem] md:px-10 md:py-14 lg:hover:shadow-[0_0_40px_-20px_#50ffa8]"
+        className="group relative mb-10 flex max-w-[26rem] flex-col items-center gap-8 rounded-2xl bg-[#313a49] px-6 py-8 shadow-[0_0_30px_-15px_#50ffa8] duration-1000 selection:bg-[#50ffa8] selection:text-[#313a49] hover:bg-[#2a323f] hover:shadow-[#50ffa881] md:max-w-[34rem] md:px-10 md:py-14 lg:shadow-[0_0_50px_-15px_#50ffa8]"
       >
         <span className="select-none text-xs font-semibold tracking-[0.2em] text-[#50ffa8] md:tracking-[0.4em]">
           ADVICE #
@@ -39,7 +39,7 @@ export default function Advice() {
           variants={variantsAdvice}
           animate="show"
           initial="hide"
-          className="text-center text-2xl font-bold text-[#cfe3ea] md:text-3xl md:font-semibold "
+          className="text-center text-2xl font-bold text-[#cfe3ea] transition-colors duration-300 group-hover:text-white md:text-3xl md:font-semibold"
         >
           {isLoading ? (
             <div className="text-white/50">Loading...</div>
