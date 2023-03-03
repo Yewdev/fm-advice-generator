@@ -1,20 +1,39 @@
-# 🔥 Frontend Mentor Challenge 🔥
+<div align="center">
 
-## QR Code component using T3 Stack (Next.js + TailwindCSS + Typescript + tRPC )
-
-- preview site: https://yewdev-fm-advice-generator.vercel.app/
-- visit my profile: https://www.frontendmentor.io/profile/Yewdev
+  <h3 align="center"><b>🔥 Frontend Mentor Challenge 🔥</b></h3>
+  <h3 align="center"><b>🎲 Advice Generator 🎲</b></h3>
+  <br/>
+  <h3 align="center">
+  <strong>
+    <a href="https://article-preview-component-hdez.vercel.app/">👉 View Demo 👈</a></strong>
+  </h3>
+  <p align="center">
+    <a href="https://www.frontendmentor.io/profile/Yewdev">🐼 Visit My Profile 🐼</a>
+  </p>
+  <br/>
+  <br/>
+  <h3 align="center">
+    <b>🛠️ Using 🛠️</b>
+  </h3>
+  <p align="center">
+    · T3 Stack ✅ ·
+  </p>
+  <p align="center">
+    · Next.js · Typescript · TailwindCSS ·
+  </p>
+  <p align="center">
+    · Framer Motion · tRPC ·
+  </p>
+</div>
+<br/>
+<br/>
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+npm install
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#and
+
+npm run dev
+```
