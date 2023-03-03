@@ -5,7 +5,7 @@
   <br/>
   <h3 align="center">
   <strong>
-    <a href="https://article-preview-component-hdez.vercel.app/">👉 View Demo 👈</a></strong>
+    <a href="https://yewdev-fm-advice-generator.vercel.app/">👉 View Demo 👈</a></strong>
   </h3>
   <p align="center">
     <a href="https://www.frontendmentor.io/profile/Yewdev">🐼 Visit My Profile 🐼</a>
