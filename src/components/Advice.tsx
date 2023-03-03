@@ -17,7 +17,7 @@ export default function Advice() {
 
   return (
     <>
-      <div className="min--full relative mb-20 flex max-w-[26rem] flex-col items-center gap-8 rounded-2xl bg-[#313a49] px-6 py-8 selection:bg-[#50ffa8] selection:text-[#313a49] md:max-w-[34rem] md:px-10 md:py-14">
+      <div className="relative mb-10 flex max-w-[26rem] flex-col items-center gap-8 rounded-2xl bg-[#313a49] px-6 py-8 selection:bg-[#50ffa8] selection:text-[#313a49] md:max-w-[34rem] md:px-10 md:py-14">
         <span className="select-none text-xs font-semibold tracking-[0.2em] text-[#50ffa8] md:tracking-[0.4em]">
           ADVICE #{id}
         </span>
