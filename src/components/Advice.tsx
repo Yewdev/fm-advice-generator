@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { api } from "~/utils/api";
 import Image from "next/image";
-
+import { motion } from "framer-motion";
 export default function Advice() {
   const [{ id, advice }, setAdvice] = useState({
     id: 117,
@@ -17,13 +17,36 @@ export default function Advice() {
 
   return (
     <>
-      <div className="relative mb-10 flex max-w-[26rem] flex-col items-center gap-8 rounded-2xl bg-[#313a49] px-6 py-8 selection:bg-[#50ffa8] selection:text-[#313a49] md:max-w-[34rem] md:px-10 md:py-14">
+      <motion.div
+        animate={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: -20 }}
+        transition={{ delay: 0.8, duration: 1.5 }}
+        className="relative mb-10 flex max-w-[26rem] flex-col items-center gap-8 rounded-2xl bg-[#313a49] px-6 py-8 selection:bg-[#50ffa8] selection:text-[#313a49] md:max-w-[34rem] md:px-10 md:py-14"
+      >
         <span className="select-none text-xs font-semibold tracking-[0.2em] text-[#50ffa8] md:tracking-[0.4em]">
-          ADVICE #{id}
+          ADVICE #
+          <motion.span
+            key={id}
+            variants={variantsId}
+            animate="show"
+            initial="hide"
+          >
+            {id}
+          </motion.span>
         </span>
-        <h1 className="text-center text-2xl font-bold text-[#cfe3ea] md:text-3xl md:font-semibold ">
-          {isLoading ? <div className="text-white/50">Loading...</div> : advice}
-        </h1>
+        <motion.h1
+          key={id}
+          variants={variantsAdvice}
+          animate="show"
+          initial="hide"
+          className="text-center text-2xl font-bold text-[#cfe3ea] md:text-3xl md:font-semibold "
+        >
+          {isLoading ? (
+            <div className="text-white/50">Loading...</div>
+          ) : (
+            `"${advice}"`
+          )}
+        </motion.h1>
         <Image
           width={500}
           height={500}
@@ -57,7 +80,38 @@ export default function Advice() {
             className={isFetching ? "animate-spin" : ""}
           />
         </button>
-      </div>
+      </motion.div>
     </>
   );
 }
+
+const variantsAdvice = {
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0.6,
+      ease: "easeOut",
+      duration: 0.5,
+    },
+  },
+  hide: {
+    opacity: 0,
+    y: -30,
+  },
+};
+const variantsId = {
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      delay: 0.2,
+      ease: "easeOut",
+      duration: 1,
+    },
+  },
+  hide: {
+    opacity: 0,
+    x: -100,
+  },
+};
