@@ -1,15 +1,14 @@
-import { z } from "zod";
-
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
+import { Advice } from "~/types";
 
 export const adviceRouter = createTRPCRouter({
   get: publicProcedure.query(async () => {
-    const data = await (
-      await fetch("https://api.adviceslip.com/advice")
-    ).json();
+    const { slip }: Advice = await fetch(
+      "https://api.adviceslip.com/advice"
+    ).then((res) => res.json());
     return {
-      id: data.slip.id,
-      advice: data.slip.advice,
+      id: slip.id,
+      advice: slip.advice,
     };
   }),
 });
