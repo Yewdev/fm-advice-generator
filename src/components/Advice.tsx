@@ -1,14 +1,19 @@
 import { useState } from "react";
 import { api } from "~/utils/api";
 import Image from "next/image";
-import { Slip } from "~/types";
+
 export default function Advice() {
   const [{ id, advice }, setAdvice] = useState({
     id: 117,
     advice: `It is easy to sit up and take notice, what's difficult is getting
     up and taking action`,
   });
-  const { data, refetch, isFetching, isLoading } = api.advice.get.useQuery();
+  const {
+    data: slip,
+    refetch,
+    isFetching,
+    isLoading,
+  } = api.advice.get.useQuery();
 
   return (
     <>
@@ -37,7 +42,7 @@ export default function Advice() {
           onClick={() => {
             if (!isFetching) {
               refetch().catch((err) => console.log(err));
-              data ? setAdvice(data) : "";
+              slip ? setAdvice(slip) : "";
             }
           }}
           className={`${

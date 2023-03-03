@@ -1,14 +1,16 @@
+import { z } from "zod";
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
-import { Advice } from "~/types";
+import fetch from "isomorphic-unfetch";
 
+const slipSchema = z.object({
+  id: z.number(),
+  advice: z.string(),
+});
+async function fetchSlip() {
+  const response = await fetch("https://api.adviceslip.com/advice");
+  const { slip } = await response.json();
+  return slipSchema.parse(slip);
+}
 export const adviceRouter = createTRPCRouter({
-  get: publicProcedure.query(async () => {
-    const { slip }: Advice = await fetch(
-      "https://api.adviceslip.com/advice"
-    ).then((res) => res.json());
-    return {
-      id: slip.id,
-      advice: slip.advice,
-    };
-  }),
+  get: publicProcedure.query(fetchSlip),
 });
